@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [https://subscription-management-pw3f.onrender.com](https://subscription-management-pw3f.onrender.com) with your browser to see the result.
+Open [https://fullstack-subscription-box.onrender.com](https://fullstack-subscription-box.onrender.com) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
