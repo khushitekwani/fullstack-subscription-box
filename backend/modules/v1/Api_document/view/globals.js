@@ -1,5 +1,5 @@
 module.exports = {
-    base_url: "https://subscription-management-pw3f.onrender.com",
+    base_url: "https://fullstack-subscription-box.onrender.com",
     app_name: "Prep-it",
     LOGO: "https://subscription-management-pw3f.onrender.com/images/logo.png",
     app_url: "https://localhost:26450",
