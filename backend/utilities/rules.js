@@ -13,7 +13,7 @@ const rules = {
         longitude: "required|numeric",
         device_token: "required|string",
         device_type: "required|string",
-        device_name: "required|string",
+        // device_name: "required|string",
         os_version: "required|string"
     },
     signup_simple: {
@@ -29,7 +29,7 @@ const rules = {
         longitude: "required|numeric",
         device_token: "required|string",
         device_type: "required|string",
-        device_name: "required|string",
+        // device_name: "required|string",
         os_version: "required|string",
     },
     signup_social: {
@@ -43,7 +43,7 @@ const rules = {
         longitude: "required|numeric",
         device_token: "required|string",
         device_type: "required|string",
-        device_name: "required|string",
+        // device_name: "required|string",
         os_version: "required|string",
     },
     verifyOtp: {

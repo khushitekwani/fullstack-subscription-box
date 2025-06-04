@@ -225,11 +225,11 @@ app.post("/v1/user/signup", decryptMiddleware, async (req, res) => {
 
     // Store device info
     await pool.query(
-      "INSERT INTO tbl_device_info (user_id, device_type, device_name, os_version, app_version, user_token, timezone, is_active, is_deleted) VALUES (?, ?, ?, ?, ?, ?, ?, 1, 0)",
+      "INSERT INTO tbl_device_info (user_id, device_type, os_version, app_version, user_token, timezone, is_active, is_deleted) VALUES (?, ?, ?, ?, ?, ?, ?, 1, 0)",
       [
         userId,
         req.body.device_type || "web",
-        req.body.device_name || "unknown",
+        // req.body.device_name || "unknown",
         req.body.os_version || "unknown",
         req.body.app_version || "1.0",
         user_token,
@@ -334,11 +334,11 @@ app.post("/v1/user/login", decryptMiddleware, async (req, res) => {
 
     // Store device info
     await pool.query(
-      "INSERT INTO tbl_device_info (user_id, device_type, device_name, os_version, app_version, user_token, timezone, is_active, is_deleted) VALUES (?, ?, ?, ?, ?, ?, ?, 1, 0)",
+      "INSERT INTO tbl_device_info (user_id, device_type, os_version, app_version, user_token, timezone, is_active, is_deleted) VALUES (?, ?, ?, ?, ?, ?, ?, 1, 0)",
       [
         user.id,
         req.body.device_type || "web",
-        req.body.device_name || "unknown",
+        // req.body.device_name || "unknown",
         req.body.os_version || "unknown",
         req.body.app_version || "1.0",
         user_token,

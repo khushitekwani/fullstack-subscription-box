@@ -5,6 +5,7 @@ const response_message = require('../../../../language/en');
 const templates = require("../../../../utilities/email_templates")
 const md5 = require('md5');
 const jwt = require('jsonwebtoken');
+const { name } = require('../../../../language/ar');
 
 class user_model {
 
@@ -52,7 +53,7 @@ class user_model {
                 const device_data = {
                     user_id: user_id,
                     device_type: request_data.device_type || 'android',
-                    device_name: request_data.device_name || 'unknown',
+                    // device_name: request_data.device_name || 'unknown',
                     os_version: request_data.os_version || 'unknown',
                     app_version: request_data.app_version || '1.0',
                     user_token: user_token,
@@ -95,7 +96,7 @@ class user_model {
         //     };
         //     const subject = "Welcome to Subscription Management system"
         //     const message = templates.welcome_email({
-        //     first_name: user.name ? user.name.split(" ")[0] : "",
+        //     name: user.name ? user.name.split(" ")[0] : "",
         //     });
         //     common.sendMail(subject, user.email, message);
         // }
@@ -105,7 +106,7 @@ class user_model {
             // Use data directly from signup scope
             const subject = "Your OTP Code";
             const message = templates.OTP({
-            first_name: data.name ? data.name.split(" ")[0] : "",
+            name: data.name ? data.name.split(" ")[0] : "",
             otp: otp,
             });
             common.sendMail(subject, data.email, message);
@@ -205,7 +206,7 @@ class user_model {
                 const device_data = {
                     user_id: user.id,
                     device_type: request_data.device_type || 'android',
-                    device_name: request_data.device_name || 'unknown',
+                    // device_name: request_data.device_name || 'unknown',
                     os_version: request_data.os_version || 'unknown',
                     app_version: request_data.app_version || '1.0',
                     user_token: user_token,
@@ -789,7 +790,7 @@ class user_model {
                                     const user = userResult[0]
                                     const subject = "Subscription Confirmation - Your Subscription Box"
                                     const message = templates.subscription_confirmation({
-                                        first_name: user.name.split(" ")[0],
+                                        name: user.name.split(" ")[0],
                                         subscription_id,
                                         box_name: plan.box_name,
                                         plan_name: plan.name,
@@ -841,7 +842,7 @@ class user_model {
                         const order = orders[0];
                         const subject = "Order Confirmation - Your Subscription Box";
                         const message = templates.order_confirmation({
-                            first_name: order.user_name ? order.user_name.split(" ")[0] : "",
+                            name: order.user_name ? order.user_name.split(" ")[0] : "",
                             order_id: order.id,
                             box_name: order.box_name,
                             plan_name: order.plan_name,
@@ -875,7 +876,7 @@ class user_model {
                         const subscription = subscriptions[0];
                         const subject = "Subscription Confirmation - Your Subscription Box";
                         const message = templates.subscription_confirmation({
-                            first_name: subscription.user_name ? subscription.user_name.split(" ")[0] : "",
+                            name: subscription.user_name ? subscription.user_name.split(" ")[0] : "",
                             subscription_id: subscription.id,
                             box_name: subscription.box_name,
                             plan_name: subscription.plan_name,
