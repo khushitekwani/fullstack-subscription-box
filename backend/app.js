@@ -20,7 +20,7 @@ const cors = require('cors');
 
 app.use(cors({
     origin: [
-        'https://fullstack-subscription-box-khushi.vercel.app',
+        'https://fullstack-subscription-box-khushi-78nwi9nvn.vercel.app',
         'http://localhost:3001'
     ],
     credentials: true 
