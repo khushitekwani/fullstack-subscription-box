@@ -20,7 +20,7 @@ const cors = require('cors');
 
 app.use(cors({
     origin: [
-        'https://subscription-management-q1kn.vercel.app',
+        'https://fullstack-subscription-box-kt.vercel.app',
         'http://localhost:3001'
     ],
     credentials: true 
