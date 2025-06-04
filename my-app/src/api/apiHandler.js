@@ -3,7 +3,7 @@ import { decrypt, encrypt } from "./apiClient"
 
 export async function API(values, endpoint, method) {
 
-  const url = `https://subscription-management-pw3f.onrender.com${endpoint}`
+  const url = `https://fullstack-subscription-box.onrender.com${endpoint}`
   console.log("API Request", url)
 
   const myHeaders = new Headers({
