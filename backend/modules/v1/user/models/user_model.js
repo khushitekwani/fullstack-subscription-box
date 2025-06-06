@@ -386,7 +386,7 @@ class user_model {
             from tbl_subscription_boxes sb
             left join tbl_category c on sb.category_id = c.id
             left join tbl_subscription_plans sp on sb.id = sp.box_id
-            where sb.is_deleted = 0${req.user && req.user.role === 'admin' ? '' : ' and sb.is_active = 1'}
+            where sb.is_deleted = 0${req.user && req.user.role === 'admin' ? '' : ''}
             `
 
         const queryParams = []
@@ -438,7 +438,7 @@ class user_model {
 
             const plansQuery = `
                     select * from tbl_subscription_plans 
-                    where box_id in (?) and is_deleted = 0${req.user && req.user.role === 'admin' ? '' : ' and sb.is_active = 1'}
+                    where box_id in (?) and is_deleted = 0${req.user && req.user.role === 'admin' ? '' : ''}
                 `
 
             pool.query(plansQuery, [boxIds], (err, plans) => {
@@ -483,7 +483,7 @@ class user_model {
                 select sb.*, c.name as category_name
                 from tbl_subscription_boxes sb
                 join tbl_category c on sb.category_id = c.id
-                where sb.id = ? and sb.is_deleted = 0 and sb.is_active = 1
+                where sb.id = ? and sb.is_deleted = 0
             `
 
         pool.query(query, [id], (error, result) => {
