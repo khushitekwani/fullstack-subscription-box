@@ -1,5 +1,5 @@
-create database Test2_06_05_ekartWithSubAdmin;
-use Test2_06_05_ekartWithSubAdmin;
+create database defaultdb;
+use defaultdb;
 
 create table tbl_user(
     id bigint(20) primary key auto_increment,
@@ -112,7 +112,7 @@ create table tbl_order (
     user_id bigint(20),
     plan_id bigint(20), 
     address text,
-    payment_method ENUM('cash', 'card', 'stripe') NOT NULL
+    payment_method ENUM('cash', 'card', 'stripe') NOT NULL,
     order_status enum('pending', 'shipped', 'delivered'),
     grand_total int,
     order_date timestamp,
@@ -210,5 +210,3 @@ INSERT INTO tbl_order (user_id, plan_id, address, payment_method, order_status, 
 (3, 5, '789 Pine Rd, London, UK', 'cash', 'pending', 4999),
 (4, 2, '321 Elm St, Sydney, AU', 'cash', 'delivered', 7999),
 (5, 4, '654 Maple Dr, Mumbai, IN', 'cash', 'shipped', 10999);
-
-
