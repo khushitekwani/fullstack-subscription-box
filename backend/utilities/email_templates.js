@@ -16,7 +16,7 @@ exports.OTP = (result) => {
               <tr>
                   <td style="text-align: center;">
                       <h2 style="color: #333;">OTP Verification</h2>
-                      <p>Dear <strong>${result.first_name}</strong>,</p>
+                      <p>Dear <strong>${result.name}</strong>,</p>
                       <p>Your One-Time Password (OTP) for verification is:</p>
                       <h3 style="color: #007BFF; font-size: 24px;">${result.otp}</h3>
                       <p>Please enter this OTP to complete your verification process.</p>
@@ -45,7 +45,7 @@ exports.welcome_email = (result) => {
         <table width="600" style="background-color: #ffffff; padding: 20px; border-radius: 5px;">
             <tr>
                 <td style="text-align: center;">
-                    <h2 style="color: #333;">Welcome, ${result.first_name}!</h2>
+                    <h2 style="color: #333;">Welcome, ${result.name}!</h2>
                     <p>We're excited to have you join <strong>${globals.app_name}</strong>.</p>
                     <p>Get started by logging into your account and exploring our features.</p>
                     <p>If you have any questions, feel free to contact our support team.</p>
@@ -75,7 +75,7 @@ exports.order_accepted = (emailData) => {
             <tr>
                 <td style="text-align: center;">
                     <h2 style="color: #333;">Order Confirmation</h2>
-                    <p>Dear <strong>${emailData.first_name}</strong>,</p>
+                    <p>Dear <strong>${emailData.name}</strong>,</p>
                     <p>Thank you for your order! Your payment of <strong>${emailData.currency} ${emailData.amount}</strong> has been successfully processed.</p>
                     <p>Order ID: <strong>#${emailData.order_id}</strong></p>
                     <p>We're preparing your subscription box for shipping and will notify you once it's on the way.</p>
@@ -104,7 +104,7 @@ exports.orderDelivered = (emailData) => {
             <tr>
                 <td style="text-align: center;">
                     <h2 style="color: #333;">Your Order Has Been Delivered!</h2>
-                    <p>Dear <strong>${emailData.first_name}</strong>,</p>
+                    <p>Dear <strong>${emailData.name}</strong>,</p>
                     <p>Great news! Your order <strong>#${emailData.order_id}</strong> has been delivered.</p>
                     <p>We hope you enjoy your subscription box. If you have any feedback or questions, please don't hesitate to contact us.</p>
                     <p>Thank you for your business!</p>
@@ -132,7 +132,7 @@ exports.payment_failed = (emailData) => {
             <tr>
                 <td style="text-align: center;">
                     <h2 style="color: #333;">Payment Failed</h2>
-                    <p>Dear <strong>${emailData.first_name}</strong>,</p>
+                    <p>Dear <strong>${emailData.name}</strong>,</p>
                     <p>We're sorry, but your payment of <strong>${emailData.currency} ${emailData.amount}</strong> could not be processed.</p>
                     <p>This could be due to insufficient funds, expired card, or other issues with your payment method.</p>
                     <p>Please log in to your account and update your payment information to complete your subscription.</p>
@@ -162,7 +162,7 @@ exports.subscription_renewed = (emailData) => {
             <tr>
                 <td style="text-align: center;">
                     <h2 style="color: #333;">Subscription Renewed</h2>
-                    <p>Dear <strong>${emailData.first_name}</strong>,</p>
+                    <p>Dear <strong>${emailData.name}</strong>,</p>
                     <p>Your subscription for <strong>${emailData.box_name}</strong> has been successfully renewed.</p>
                     <p>Payment of <strong>${emailData.currency} ${emailData.amount}</strong> has been processed.</p>
                     <p>Your next box will be shipped according to your subscription schedule.</p>
@@ -191,7 +191,7 @@ exports.subscription_cancelled = (emailData) => {
             <tr>
                 <td style="text-align: center;">
                     <h2 style="color: #333;">Subscription Cancelled</h2>
-                    <p>Dear <strong>${emailData.first_name}</strong>,</p>
+                    <p>Dear <strong>${emailData.name}</strong>,</p>
                     <p>Your subscription for <strong>${emailData.box_name}</strong> has been cancelled as requested.</p>
                     <p>You will no longer be charged for this subscription.</p>
                     <p>We're sorry to see you go. If you'd like to resubscribe in the future, you can do so from your account.</p>
@@ -220,7 +220,7 @@ exports.subscription_confirmation = (emailData) => {
                         <tr>
                                 <td style="text-align: center;">
                                         <h2 style="color: #333;">Subscription Confirmed</h2>
-                                        <p>Dear <strong>${emailData.first_name}</strong>,</p>
+                                        <p>Dear <strong>${emailData.name}</strong>,</p>
                                         <p>Your subscription (<strong>#${emailData.subscription_id}</strong>) for <strong>${emailData.box_name}</strong> (${emailData.plan_name}) has been successfully activated.</p>
                                         <p>Amount: <strong>${emailData.amount}</strong></p>
                                         <p>Start Date: <strong>${emailData.start_date}</strong></p>
@@ -250,7 +250,7 @@ exports.order_confirmation = (emailData) => {
                         <tr>
                                 <td style="text-align: center;">
                                         <h2 style="color: #333;">Order Confirmation</h2>
-                                        <p>Dear <strong>${emailData.first_name}</strong>,</p>
+                                        <p>Dear <strong>${emailData.name}</strong>,</p>
                                         <p>Thank you for your order!</p>
                                         <p><strong>Order ID:</strong> #${emailData.order_id}</p>
                                         <p><strong>Box:</strong> ${emailData.box_name}</p>
