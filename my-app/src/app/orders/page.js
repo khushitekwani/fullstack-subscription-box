@@ -77,10 +77,10 @@ export default function OrdersPage() {
           <h2 className="text-xl font-semibold mb-2">No Orders Yet</h2>
           <p className="text-gray-600 mb-4">You have not placed any orders yet.</p>
           <button
-            onClick={() => router.push("/subscription-boxes")}
+            onClick={() => router.push("/")}
             className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
           >
-            Browse Subscription Boxes
+             Boxes
           </button>
         </div>
       ) : (

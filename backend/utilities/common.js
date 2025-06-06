@@ -52,7 +52,7 @@ class Utility {
             });
 
             const mailOptions = {
-                from: "example@gmail.com",
+                from: "khushitekwani1@gmail.com",
                 to: to_email,
                 subject: subject,
                 html: message
